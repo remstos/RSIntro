@@ -78,7 +78,8 @@
 				A5BA6E391A84C2F10054326D /* RSIntroTopPage.swift */,
 				A5BA6E3A1A84C2F10054326D /* RSIntroView.swift */,
 			);
-			path = RSIntro;
+			name = RSIntro;
+			path = ../../RSIntro;
 			sourceTree = "<group>";
 		};
 		A5C4C6C01A723FA80048A1E9 = {

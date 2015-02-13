@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A6CCEF38-72CB-49CC-BA7F-50C640070C70</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RSIntroDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1B101BE434B20A801D27BF21F9338EEDF116A3B0</key>
+		<string>https://github.com/Kemcake/RSIntro</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Demo/RSIntroDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1B101BE434B20A801D27BF21F9338EEDF116A3B0</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Kemcake/RSIntro</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1B101BE434B20A801D27BF21F9338EEDF116A3B0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1B101BE434B20A801D27BF21F9338EEDF116A3B0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RSIntroDemo</string>
+		</dict>
+	</array>
+</dict>
+</plist>
