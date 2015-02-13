@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5BA6E3B1A84C2F10054326D /* RSIntroElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA6E371A84C2F10054326D /* RSIntroElement.swift */; };
+		A5BA6E3C1A84C2F10054326D /* RSIntroPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA6E381A84C2F10054326D /* RSIntroPage.swift */; };
+		A5BA6E3D1A84C2F10054326D /* RSIntroTopPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA6E391A84C2F10054326D /* RSIntroTopPage.swift */; };
+		A5BA6E3E1A84C2F10054326D /* RSIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA6E3A1A84C2F10054326D /* RSIntroView.swift */; };
+		A5BA6E401A84C4090054326D /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA6E3F1A84C4090054326D /* Triangle.swift */; };
+		A5BA6E421A84C4BE0054326D /* TourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA6E411A84C4BE0054326D /* TourViewController.swift */; };
+		A5BA6E441A84C5560054326D /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA6E431A84C5560054326D /* UIImageEffects.swift */; };
 		A5C4C6CF1A723FA80048A1E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C4C6CE1A723FA80048A1E9 /* AppDelegate.swift */; };
-		A5C4C6D11A723FA80048A1E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C4C6D01A723FA80048A1E9 /* ViewController.swift */; };
+		A5C4C6D11A723FA80048A1E9 /* OrigamiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C4C6D01A723FA80048A1E9 /* OrigamiViewController.swift */; };
 		A5C4C6D41A723FA80048A1E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5C4C6D21A723FA80048A1E9 /* Main.storyboard */; };
 		A5C4C6D61A723FA80048A1E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5C4C6D51A723FA80048A1E9 /* Images.xcassets */; };
 		A5C4C6D91A723FA90048A1E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C4C6D71A723FA90048A1E9 /* LaunchScreen.xib */; };
@@ -26,10 +33,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5BA6E371A84C2F10054326D /* RSIntroElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSIntroElement.swift; sourceTree = "<group>"; };
+		A5BA6E381A84C2F10054326D /* RSIntroPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSIntroPage.swift; sourceTree = "<group>"; };
+		A5BA6E391A84C2F10054326D /* RSIntroTopPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSIntroTopPage.swift; sourceTree = "<group>"; };
+		A5BA6E3A1A84C2F10054326D /* RSIntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSIntroView.swift; sourceTree = "<group>"; };
+		A5BA6E3F1A84C4090054326D /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		A5BA6E411A84C4BE0054326D /* TourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourViewController.swift; sourceTree = "<group>"; };
+		A5BA6E431A84C5560054326D /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
 		A5C4C6C91A723FA80048A1E9 /* RSIntroDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSIntroDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5C4C6CD1A723FA80048A1E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5C4C6CE1A723FA80048A1E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A5C4C6D01A723FA80048A1E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A5C4C6D01A723FA80048A1E9 /* OrigamiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrigamiViewController.swift; sourceTree = "<group>"; };
 		A5C4C6D31A723FA80048A1E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5C4C6D51A723FA80048A1E9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A5C4C6D81A723FA90048A1E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -56,6 +70,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5BA6E361A84C2F10054326D /* RSIntro */ = {
+			isa = PBXGroup;
+			children = (
+				A5BA6E371A84C2F10054326D /* RSIntroElement.swift */,
+				A5BA6E381A84C2F10054326D /* RSIntroPage.swift */,
+				A5BA6E391A84C2F10054326D /* RSIntroTopPage.swift */,
+				A5BA6E3A1A84C2F10054326D /* RSIntroView.swift */,
+			);
+			path = RSIntro;
+			sourceTree = "<group>";
+		};
 		A5C4C6C01A723FA80048A1E9 = {
 			isa = PBXGroup;
 			children = (
@@ -77,8 +102,12 @@
 		A5C4C6CB1A723FA80048A1E9 /* RSIntroDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A5BA6E361A84C2F10054326D /* RSIntro */,
 				A5C4C6CE1A723FA80048A1E9 /* AppDelegate.swift */,
-				A5C4C6D01A723FA80048A1E9 /* ViewController.swift */,
+				A5C4C6D01A723FA80048A1E9 /* OrigamiViewController.swift */,
+				A5BA6E411A84C4BE0054326D /* TourViewController.swift */,
+				A5BA6E3F1A84C4090054326D /* Triangle.swift */,
+				A5BA6E431A84C5560054326D /* UIImageEffects.swift */,
 				A5C4C6D21A723FA80048A1E9 /* Main.storyboard */,
 				A5C4C6D51A723FA80048A1E9 /* Images.xcassets */,
 				A5C4C6D71A723FA90048A1E9 /* LaunchScreen.xib */,
@@ -212,8 +241,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5C4C6D11A723FA80048A1E9 /* ViewController.swift in Sources */,
+				A5BA6E3C1A84C2F10054326D /* RSIntroPage.swift in Sources */,
+				A5BA6E3B1A84C2F10054326D /* RSIntroElement.swift in Sources */,
+				A5BA6E441A84C5560054326D /* UIImageEffects.swift in Sources */,
+				A5BA6E3D1A84C2F10054326D /* RSIntroTopPage.swift in Sources */,
+				A5C4C6D11A723FA80048A1E9 /* OrigamiViewController.swift in Sources */,
+				A5BA6E421A84C4BE0054326D /* TourViewController.swift in Sources */,
+				A5BA6E3E1A84C2F10054326D /* RSIntroView.swift in Sources */,
 				A5C4C6CF1A723FA80048A1E9 /* AppDelegate.swift in Sources */,
+				A5BA6E401A84C4090054326D /* Triangle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RSIntroDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -347,6 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RSIntroDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -405,6 +443,7 @@
 				A5C4C6EA1A723FA90048A1E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5C4C6EB1A723FA90048A1E9 /* Build configuration list for PBXNativeTarget "RSIntroDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +452,7 @@
 				A5C4C6ED1A723FA90048A1E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
