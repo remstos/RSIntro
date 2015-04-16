@@ -54,7 +54,7 @@ class RSIntroTopPage:UIView {
         imageView.center = self.center
         self.addSubview(imageView)
                 
-        nextPageButton = UIButton.buttonWithType(.Custom) as UIButton
+        nextPageButton = UIButton.buttonWithType(.Custom) as! UIButton
         if (intro?.verticalScroll != nil) {
             nextPageButton.frame = CGRect(x: 0, y: self.frame.size.height - margin*2, width: self.frame.size.width, height: margin)
         } else {

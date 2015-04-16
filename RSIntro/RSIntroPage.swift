@@ -32,8 +32,8 @@ class RSIntroPage:UIView {
         }
     }
     
-    override init() {
-        super.init()
+    init() {
+        super.init(frame: CGRect.zeroRect)
     }
     init(introView:RSIntroView) {
         super.init(frame: introView.frame)
@@ -74,7 +74,7 @@ class RSIntroPage:UIView {
         subtitleLabel.numberOfLines = 0
         subtitleLabel.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         self.addSubview(subtitleLabel)
-        bottomNextPage = UIButton.buttonWithType(.Custom) as UIButton
+        bottomNextPage = UIButton.buttonWithType(.Custom) as! UIButton
         bottomNextPage.frame = CGRect(x: 0, y: self.frame.size.height - margin*2, width: self.frame.size.width, height: margin)
         //        bottomNextPage.setTitle("Next", forState: .Normal)
         bottomNextPage.contentHorizontalAlignment = .Center

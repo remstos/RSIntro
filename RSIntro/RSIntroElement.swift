@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal class BYKeyFrameInterval:NSObject {
+class BYKeyFrameInterval:NSObject {
     var start:BYKeyFrame
     var end:BYKeyFrame
     init(start:BYKeyFrame, end:BYKeyFrame) {
@@ -34,8 +34,8 @@ class RSIntroElement: UIView {
     var times = [CGFloat]()
     var timeHandler:((time:CGFloat, element:RSIntroElement)->Void)?
     
-    override init() {
-        super.init()
+    init() {
+        super.init(frame:CGRect.zeroRect)
         setup()
     }
     override init(frame: CGRect) {

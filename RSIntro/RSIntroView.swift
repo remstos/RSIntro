@@ -10,6 +10,7 @@ import UIKit
 
 
 @objc protocol RSIntroViewDelegate {
+//    optional func introViewPageWillAppear(page:Int)
     optional func introViewPageDidAppear(page:Int)
     optional func introViewPageWillDisappear(page:Int)
 }
@@ -22,7 +23,7 @@ class RSIntroView: UIView,UIScrollViewDelegate {
     var contentHeight:NSLayoutConstraint!
     var contentWidth:NSLayoutConstraint!
     
-    @IBInspectable var verticalScroll:Bool = true
+    var verticalScroll:Bool = true
     var currentPage = 0 as Int
     private var numberOfPages = 0
     var delegate:RSIntroViewDelegate?
@@ -34,8 +35,8 @@ class RSIntroView: UIView,UIScrollViewDelegate {
     }
     var elementViews:[RSIntroElement] = []
 
-    override init() {
-        super.init()
+    init() {
+        super.init(frame:CGRect.zeroRect)
         setup()
     }
     override init(frame: CGRect) {

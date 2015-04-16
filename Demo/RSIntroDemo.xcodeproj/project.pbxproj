@@ -70,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A53295541A8E5B47000451F0 /* OrigamiDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A5C4C6D01A723FA80048A1E9 /* OrigamiViewController.swift */,
+				A5BA6E3F1A84C4090054326D /* Triangle.swift */,
+			);
+			name = OrigamiDemo;
+			sourceTree = "<group>";
+		};
 		A5BA6E361A84C2F10054326D /* RSIntro */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,9 +114,8 @@
 			children = (
 				A5BA6E361A84C2F10054326D /* RSIntro */,
 				A5C4C6CE1A723FA80048A1E9 /* AppDelegate.swift */,
-				A5C4C6D01A723FA80048A1E9 /* OrigamiViewController.swift */,
+				A53295541A8E5B47000451F0 /* OrigamiDemo */,
 				A5BA6E411A84C4BE0054326D /* TourViewController.swift */,
-				A5BA6E3F1A84C4090054326D /* Triangle.swift */,
 				A5BA6E431A84C5560054326D /* UIImageEffects.swift */,
 				A5C4C6D21A723FA80048A1E9 /* Main.storyboard */,
 				A5C4C6D51A723FA80048A1E9 /* Images.xcassets */,
