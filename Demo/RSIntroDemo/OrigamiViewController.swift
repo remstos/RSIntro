@@ -28,7 +28,7 @@ class OrigamiViewController: UIViewController,RSIntroViewDelegate {
         super.viewDidLoad()
         self.view.clipsToBounds = true
         let bg = UIImageView(frame: self.view.frame)
-        bg.image = UIImage(named:"origami_bg")?.applyBlurWithRadius(10, tintColor: nil, saturationDeltaFactor: 1.0, maskImage: nil)
+        bg.image = UIImage(named:"origami_bg")
         bg.contentMode = .ScaleAspectFill
         bg.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         self.view.addSubview(bg)
@@ -70,7 +70,7 @@ class OrigamiViewController: UIViewController,RSIntroViewDelegate {
         self.view.addSubview(introView)
         let page1 = RSIntroPage(introView: introView)
         page1.title = "First, take a piece of paper. A4 should be fine!"
-        page1.bottomNextPage.setImage(UIImage(named: "intro_next")!, forState: .Normal)
+        page1.nextButton.setImage(UIImage(named: "intro_next")!, forState: .Normal)
         introView.addPageWithView(page1, atIndex:0)
         slideView = UIImageView(image: UIImage(named:"touch"))
         page1.addSubview(slideView)
@@ -79,12 +79,14 @@ class OrigamiViewController: UIViewController,RSIntroViewDelegate {
         let page2 = RSIntroPage(introView: introView)
         page2.title = "Fold it like this. Pretty easy right?"
         page2.subtitle = "Sorry if you're stock on this step..."
-        page2.bottomNextPage.setImage(UIImage(named: "intro_next")!, forState: .Normal)
+        page2.nextButton.setImage(UIImage(named: "intro_next")!, forState: .Normal)
+        page2.nextButton.hidden = false
         introView.addPageWithView(page2, atIndex:1)
         
         let page3 = RSIntroPage(introView: introView)
         page3.title = "Take the corners and fold them like that. Still easy!"
-        page3.bottomNextPage.setImage(UIImage(named: "intro_next")!, forState: .Normal)
+        page3.nextButton.setImage(UIImage(named: "intro_next")!, forState: .Normal)
+        page3.nextButton.hidden = false
         introView.addPageWithView(page3, atIndex:2)
         
         let page4 = RSIntroPage(introView: introView)

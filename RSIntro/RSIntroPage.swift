@@ -13,8 +13,8 @@ class RSIntroPage:UIView {
     var titleLabel:UILabel!
     var subtitleLabel:UILabel!
     var imageView:UIImageView!
-    var bottomNextPage:UIButton!
-    var intro:RSIntroView?
+    var nextButton:UIButton!
+    var introView:RSIntroView?
     
     var title:String? {
         didSet {
@@ -32,16 +32,9 @@ class RSIntroPage:UIView {
         }
     }
     
-    init() {
-        super.init(frame: CGRect.zeroRect)
-    }
     init(introView:RSIntroView) {
         super.init(frame: introView.frame)
-        intro = introView
-        setup()
-    }
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+        self.introView = introView
         setup()
     }
     required init(coder aDecoder: NSCoder) {
@@ -74,15 +67,20 @@ class RSIntroPage:UIView {
         subtitleLabel.numberOfLines = 0
         subtitleLabel.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         self.addSubview(subtitleLabel)
-        bottomNextPage = UIButton.buttonWithType(.Custom) as! UIButton
-        bottomNextPage.frame = CGRect(x: 0, y: self.frame.size.height - margin*2, width: self.frame.size.width, height: margin)
-        //        bottomNextPage.setTitle("Next", forState: .Normal)
-        bottomNextPage.contentHorizontalAlignment = .Center
-        bottomNextPage.addTarget(self, action: "nextPage:", forControlEvents: .TouchUpInside)
-        self.addSubview(bottomNextPage)
+        nextButton = UIButton.buttonWithType(.Custom) as! UIButton
+        if introView != nil && introView!.verticalScroll {
+            nextButton.frame = CGRect(x: 0, y: self.frame.size.height - margin*2, width: self.frame.size.width, height: margin)
+        } else {
+            nextButton.frame = CGRect(x: self.frame.size.width - margin, y: (self.frame.size.height - margin)/2, width: margin, height: margin)
+        }
+        nextButton.contentHorizontalAlignment = .Center
+        nextButton.backgroundColor = UIColor.blueColor();
+        nextButton.addTarget(self, action: "nextPage:", forControlEvents: .TouchUpInside)
+//        nextButton.hidden = true
+        self.addSubview(nextButton)
     }
     
     func nextPage(sender:UIButton) {
-        intro?.scrollToNexPage()
+        introView?.scrollToNexPage()
     }
 }

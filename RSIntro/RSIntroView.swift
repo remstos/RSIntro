@@ -10,35 +10,33 @@ import UIKit
 
 
 @objc protocol RSIntroViewDelegate {
-//    optional func introViewPageWillAppear(page:Int)
     optional func introViewPageDidAppear(page:Int)
     optional func introViewPageWillDisappear(page:Int)
 }
 
 class RSIntroView: UIView,UIScrollViewDelegate {
-
     
-    var scrollView:UIScrollView!
-    var contentView:UIView!
-    var contentHeight:NSLayoutConstraint!
-    var contentWidth:NSLayoutConstraint!
-    
-    var verticalScroll:Bool = true
-    var currentPage = 0 as Int
+    private var contentView:UIView!
+    private var contentHeight:NSLayoutConstraint!
+    private var contentWidth:NSLayoutConstraint!
     private var numberOfPages = 0
+    private var elementViews:[RSIntroElement] = []
+
+    /// The containing scrollView
+    var scrollView:UIScrollView!
+    /// Scroll direction
+    var verticalScroll:Bool = true
+    /// Visible page of the intro (readonly)
+    private(set) var currentPage = 0 as Int
+    /// Delegate for RSIntroViewDelegate
     var delegate:RSIntroViewDelegate?
-    
+    /// Enable/Disable paging
     var pagingEnabled:Bool = true {
         didSet {
             scrollView.pagingEnabled = pagingEnabled
         }
     }
-    var elementViews:[RSIntroElement] = []
 
-    init() {
-        super.init(frame:CGRect.zeroRect)
-        setup()
-    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -70,28 +68,56 @@ class RSIntroView: UIView,UIScrollViewDelegate {
         scrollView.addConstraints([contentWidth,contentHeight] + contentH + contentV)
     }
     
+    /// Add a view to the intro that will handle moving
+    /// between keyframes
+    ///
+    /// :param: elementView Element to add
     func addElement(elementView:RSIntroElement) {
         elementViews.append(elementView)
         self.addSubview(elementView)
     }
     
-    func addPageWithView(view:UIView, atIndex index:Float) {
+    /// Add a new page to the intro
+    /// and update the scrollView size
+    ///
+    /// :param: view Page view
+    /// :param: atIndex Index of the page
+    func addPageWithView(view:UIView, atIndex index:Int) {
         numberOfPages++
         view.frame = scrollView.frame
-        scrollView.addSubview(view)
+        contentView.addSubview(view)
         view.setTranslatesAutoresizingMaskIntoConstraints(false)
         let w = NSLayoutConstraint(item: view, attribute: .Width, relatedBy: .Equal, toItem: scrollView, attribute: .Width, multiplier: 1, constant: 0)
         let h = NSLayoutConstraint(item: view, attribute: .Height, relatedBy: .Equal, toItem: scrollView, attribute: .Height, multiplier: 1, constant:0)
         scrollView.addConstraints([w,h])
         if verticalScroll {
-            let t = NSLayoutConstraint(item: view, attribute: .Top, relatedBy: .Equal, toItem: scrollView, attribute: .Top, multiplier: 1, constant: scrollView.frame.size.height * CGFloat(index))
-            scrollView.addConstraint(t)
+            let top = NSLayoutConstraint(item: view, attribute: .Top, relatedBy: .Equal, toItem: contentView, attribute: .Top, multiplier: 1, constant: scrollView.frame.size.height * CGFloat(index))
+            contentView.addConstraint(top)
+            let leading = NSLayoutConstraint(item: view, attribute: .Leading, relatedBy: .Equal, toItem: contentView, attribute: .Leading, multiplier: 1, constant: 0)
+            contentView.addConstraint(leading)
         } else {
-            let l = NSLayoutConstraint(item: view, attribute: .Leading, relatedBy: .Equal, toItem: scrollView, attribute: .Leading, multiplier: 1, constant: scrollView.frame.size.width * CGFloat(index))
-            scrollView.addConstraint(l)
+            let leading = NSLayoutConstraint(item: view, attribute: .Leading, relatedBy: .Equal, toItem: contentView, attribute: .Leading, multiplier: 1, constant: scrollView.frame.size.width * CGFloat(index))
+            contentView.addConstraint(leading)
+            let top = NSLayoutConstraint(item: view, attribute: .Top, relatedBy: .Equal, toItem: contentView, attribute: .Top, multiplier: 1, constant: 0)
+            contentView.addConstraint(top)
         }
         self.updateScrollViewContentSize()
 
+    }
+    
+    /// Add a new page to the intro
+    /// creating a RSIntroPage
+    ///
+    /// :param: title Title text shown on RSIntroPage
+    /// :param: subtitle Subtitle text shown on RSIntroPage
+    /// :param: image Image shown on RSIntroPage
+    /// :param: atIndex Index of the page
+    func addPageWithTitle(title:String?, subtitle:String?, image:UIImage?, atIndex:Int) {
+        let view = RSIntroPage(introView: self)
+        view.title = title
+        view.subtitle = subtitle
+        view.image = image
+        self.addPageWithView(view, atIndex: atIndex)
     }
     
     func updateScrollViewContentSize(){
@@ -104,13 +130,6 @@ class RSIntroView: UIView,UIScrollViewDelegate {
             contentWidth = NSLayoutConstraint(item: contentView, attribute: .Width, relatedBy: .Equal, toItem: scrollView, attribute: .Width, multiplier: CGFloat(numberOfPages), constant:0)
             scrollView.addConstraint(contentWidth)
         }
-    }
-    func addPageWithTitle(title:String?, subtitle:String?, image:UIImage?, atIndex:Float) {
-        let view = RSIntroPage(frame: self.frame)
-        view.title = title
-        view.subtitle = subtitle
-        view.image = image
-        self.addPageWithView(view, atIndex: atIndex)
     }
     
     func scrollToNexPage(){
@@ -146,7 +165,7 @@ class RSIntroView: UIView,UIScrollViewDelegate {
         }
     }
     
-    //// MARK: - ScrollView delegate
+    // MARK: - ScrollView delegate
     func getPageWithOffset(offset:CGPoint) -> Int {
         return verticalScroll ? Int(offset.y/self.frame.size.height) : Int(offset.x/self.frame.size.width)
     }
